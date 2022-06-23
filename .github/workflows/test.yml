@@ -15,7 +15,7 @@ jobs:
     - name: Prepare to push
       run: cd my-writing
     - name: Push to Mirror
-      run: git push "$MIRROR_ONE" --all 2> .log
+      run: git push $MIRROR_ONE --all
     - name: Cleanup
       run: |
        cd ..
