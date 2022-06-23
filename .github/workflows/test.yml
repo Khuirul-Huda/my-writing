@@ -8,7 +8,7 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     env:
-      MIRROR_ONE: {{ secrets.MIRROR_ONE }}
+      MIRROR_ONE: ${{ secrets.MIRROR_ONE }}
     steps:
     - name: Clone Repository
       run: git clone https://github.com/Khuirul-Huda/my-writing.git
