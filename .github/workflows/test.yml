@@ -11,10 +11,9 @@ jobs:
       MIRROR_ONE: ${{ secrets.MIRROR_ONE }}
     steps:
     - name: mirror repo
-      run: git clone https://github.com/Khuirul-Huda/my-writing.git
-      run: cd my-writing 
-      run: ls && git push $MIRROR_ONE --all
       run: |
+       git clone https://github.com/Khuirul-Huda/my-writing.git
+       cd my-writing 
+       ls && git push $MIRROR_ONE --all
        cd ..
        rm -rf my-writing
-#todo #checks
