@@ -7,14 +7,14 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
+    env:
+      MIRROR_ONE: {{ secrets.MIRROR_ONE }}
     steps:
     - name: Clone Repository
       run: git clone https://github.com/Khuirul-Huda/my-writing.git
     - name: Prepare to push
       run: cd my-writing
     - name: Push to Mirror
-      env:
-        MIRROR_ONE: {{ secrets.MIRROR_ONE }}
       run: git push "$MIRROR_ONE" --all 2> .log
     - name: Cleanup
       run: |
