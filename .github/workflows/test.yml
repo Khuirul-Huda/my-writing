@@ -10,13 +10,10 @@ jobs:
     env:
       MIRROR_ONE: ${{ secrets.MIRROR_ONE }}
     steps:
-    - name: Clone Repository
+    - name: mirror repo
       run: git clone https://github.com/Khuirul-Huda/my-writing.git
-    - name: Prepare to push
-      run: cd my-writing
-    - name: Push to Mirror
-      run: git push $MIRROR_ONE --all
-    - name: Cleanup
+      run: cd my-writing 
+      run: ls && git push $MIRROR_ONE --all
       run: |
        cd ..
        rm -rf my-writing
